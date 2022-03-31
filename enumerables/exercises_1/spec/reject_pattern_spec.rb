@@ -9,11 +9,11 @@ RSpec.describe 'reject pattern' do
     expect(filtered).to eq([2, 93, 7, 1, 31, 368])
   end
 
-  xit 'removes vowels' do
+  it 'removes vowels' do
     letters = ["a", "l", "l", " ", "y", "o", "u", "r", " ", "b", "a", "s", "e", " ", "a", "r", "e", " ", "b", "e", "l", "o", "n", "g", " ", "t", "o", " ", "u", "s"]
     remaining = []
     letters.each do |letter|
-      # Your code goes here
+      remaining << letter unless letter.start_with?('a','e','i','o','u', 'y')
     end
     expect(remaining).to eq(["l", "l", " ", "r", " ", "b", "s", " ", "r", " ", "b", "l", "n", "g", " ", "t", " ", "s"])
   end
@@ -21,7 +21,7 @@ RSpec.describe 'reject pattern' do
   xit 'removes numbers divisible by 3' do
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     remaining = []
-    # Your code goes here
+
     expect(remaining).to eq([1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20])
   end
 
