@@ -1,6 +1,7 @@
 require 'rspec'
 require './lib/dragon'
 
+
 RSpec.describe Dragon do
   it 'has a name' do
     dragon = Dragon.new('Ramoth', :gold, 'Lessa')
@@ -48,3 +49,4 @@ RSpec.describe Dragon do
     expect(dragon.hungry?).to be false
   end
 end
+require 'pry'; binding.pry
