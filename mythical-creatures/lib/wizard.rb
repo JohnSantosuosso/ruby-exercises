@@ -27,6 +27,7 @@ class Wizard
     end
   end
 
+#incrementing cast must come before return statement
   def cast
     @cast += 1
     return 'MAGIC MISSILE'
