@@ -1,7 +1,7 @@
 class Human
   require 'ogre'
   attr_reader :name
-  attr_accessor :encounter_counter, :notice_ogre
+  attr_accessor :encounter_counter, :notice_ogre, :knocked_out
 
   def initialize(name = 'Jane')
     @name = name
@@ -11,15 +11,11 @@ class Human
   end
 
   def notices_ogre?
-    if @encounter_counter % 3 == 0
-      @notice_ogre = true
-    else
-      return false
-    end
+    @notice_ogre
   end
 
   def knocked_out?
-
+    @knocked_out
   end
 
 end

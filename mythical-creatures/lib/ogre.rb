@@ -1,7 +1,7 @@
 class Ogre
   require 'human'
   attr_reader:name, :home
-  attr_accessor :swings
+  attr_accessor :swings, :encounter_counter
 
   def initialize(name, home = 'Swamp')
     @name = name
@@ -11,23 +11,26 @@ class Ogre
   end
 
   def encounter(human)
-    #method from Human class passed to Ogre
-    human.encounter_counter +=1
-    if human.notices_ogre?
-      swing_at(human)
+    human.encounter_counter += 1
+    @encounter_counter += 1
+
+    if @encounter_counter % 3 == 0
+      human.notice_ogre = true
+      @swings += 1
+    end
+
+    if @swings % 2 == 0
+      human.knocked_out = true
     end
   end
 
-  #ogre swings at object from Human class
   def swing_at(human)
-      @swings += 1
-      human.notice_ogre = true
+    @swings += 1
   end
 
   def apologize(human)
     human.knocked_out = false
-    @swings = 0
-    @encounter_counter = 0
   end
+
 
 end
