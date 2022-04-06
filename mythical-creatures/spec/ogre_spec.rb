@@ -1,5 +1,6 @@
-require './spec/spec-helper'
+require './spec/spec_helper'
 require './lib/ogre'
+require './lib/human'
 
 RSpec.describe Ogre do
   it 'has a name' do
@@ -96,3 +97,5 @@ RSpec.describe Ogre do
     expect(human.knocked_out?).to be false
   end
 end
+
+require 'pry'; binding.pry
