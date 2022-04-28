@@ -50,8 +50,8 @@ class Bag
     @candies.pop
     end
     @candies_taken
+    end
   end
-end
 end
 
 

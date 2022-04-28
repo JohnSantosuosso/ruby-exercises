@@ -1,5 +1,4 @@
-require 'rspec'
-require_relative '../lib/costume'
+require './lib/costume'
 
 RSpec.describe Costume do
   it 'has a style' do
@@ -8,7 +7,7 @@ RSpec.describe Costume do
     expect(costume.style).to eq('Dragon')
   end
 
-  xit 'has a different style of costume' do
+  it 'has a different style of costume' do
     costume = Costume.new('Princess')
 
     expect(costume.style).to eq('Princess')
