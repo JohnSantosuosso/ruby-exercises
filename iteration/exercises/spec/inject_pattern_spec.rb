@@ -11,7 +11,7 @@ RSpec.describe 'inject pattern test' do
     expect(difference).to eq(-170)
   end
 
-  xit 'test 2' do
+  it 'test 2' do
     bills = {
       rent: 800,
       car: 240,
@@ -28,19 +28,19 @@ RSpec.describe 'inject pattern test' do
     expect(difference).to eq(-2262)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     numbers = [2, 3, 5, 7]
     # Iterate over the numbers array defined above
     # to find the product of all the numbers
-
     product = 1
     numbers.each do |number|
       # Your Code Here
+      product = product * number
     end
     expect(product).to eq(210)
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     scrabble_score = {
       letter_total: 23,
       word_muliplier: 3,
@@ -51,6 +51,7 @@ RSpec.describe 'inject pattern test' do
 
     product = 1
     scrabble_score.each do |(key, value)|
+      product = product * value
       # Your Code Here
     end
     expect(product).to eq(138)
